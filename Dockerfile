@@ -1,7 +1,8 @@
 # Stage 1: Build
 FROM maven:3.8.5-openjdk-17 AS builder
 WORKDIR /app
-COPY . .
+COPY journalApp /app
+WORKDIR /app
 RUN mvn clean package -DskipTests
 
 # Stage 2: Run
